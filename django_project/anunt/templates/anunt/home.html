@@ -3,12 +3,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>
-
-        </title>
+        {% if title %}
+            <title>
+                Django Anunt - {{ title }}
+            </title>
+        {% else %}
+            <title>Django Anunt</title>
+        {% endif %}
     </head>
 
     <body>
-        <h1>Anunt home!</h1>
+        {% for anunt in anunturi %}
+            <h1>{{ anunt.titlu }}</h1>
+            <p> Postat de {{ anunt.autor }} la data de {{ anunt.data_postarii }}</p>
+            <p>{{ anunt.descriere }}</p>
+        {% endfor %}
     </body>
 </html>

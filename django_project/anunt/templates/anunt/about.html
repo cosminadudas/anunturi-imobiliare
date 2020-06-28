@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>
-
-        </title>
+        {% if title %}
+            <title>
+                Django Anunt - {{ title }}
+            </title>
+        {% else %}
+            <title>Django Anunt</title>
+        {% endif %}
     </head>
 
     <body>
