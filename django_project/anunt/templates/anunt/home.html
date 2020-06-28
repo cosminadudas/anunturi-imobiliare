@@ -1,22 +1,8 @@
-
-
-<!DOCTYPE html>
-<html>
-    <head>
-        {% if title %}
-            <title>
-                Django Anunt - {{ title }}
-            </title>
-        {% else %}
-            <title>Django Anunt</title>
-        {% endif %}
-    </head>
-
-    <body>
-        {% for anunt in anunturi %}
-            <h1>{{ anunt.titlu }}</h1>
-            <p> Postat de {{ anunt.autor }} la data de {{ anunt.data_postarii }}</p>
-            <p>{{ anunt.descriere }}</p>
-        {% endfor %}
-    </body>
-</html>
+{% extends "anunt/base.html" %}
+{% block content %}
+    {% for anunt in anunturi %}
+        <h1>{{ anunt.titlu }}</h1>
+        <p> Postat de {{ anunt.autor }} la data de {{ anunt.data_postarii }}</p>
+        <p>{{ anunt.descriere }}</p>
+    {% endfor %}
+{% endblock content %}
