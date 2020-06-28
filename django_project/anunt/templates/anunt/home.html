@@ -1,8 +1,15 @@
 {% extends "anunt/base.html" %}
 {% block content %}
     {% for anunt in anunturi %}
-        <h1>{{ anunt.titlu }}</h1>
-        <p> Postat de {{ anunt.autor }} la data de {{ anunt.data_postarii }}</p>
-        <p>{{ anunt.descriere }}</p>
+        <anunt class="media content-section">
+            <div class="media-body">
+            <div class="anunt-metadata">
+                <a class="mr-2" href="#">{{ anunt.autor }}</a>
+                <small class="text-muted">{{ anunt.data_postarii }}</small>
+            </div>
+            <h2><a class="anunt-titlu" href="#">{{ anunt.titlu }}</a></h2>
+            <p class="anunt-descriere">{{ anunt.descriere }}</p>
+            </div>
+        </anunt>
     {% endfor %}
 {% endblock content %}
