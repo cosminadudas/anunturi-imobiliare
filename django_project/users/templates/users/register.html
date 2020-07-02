@@ -1,24 +1,21 @@
-{% extends "anunt/base.html" %}
-{% load crispy_forms_tags %}
-{% block content %}
-    <div class="content-section">
-        <form method="POST">
-            {% csrf_token %}
-            <fieldset class="form_group">
-                <legend class="border-bottom mb-4">
-                    Join Today!
-                    {{ form|crispy }}
-                </legend>
+{% extends "anunt/base.html" %} {% load crispy_forms_tags %} {% block content %}
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form_group">
+            <legend class="border-bottom mb-4">
+                Alatura-te acum! {{ form|crispy }}
+            </legend>
 
-            </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit"> Sign up</button>
-            </div>
-        </form>
-        <div class="border-top pt-3">
-            <small class="text-muted"> 
-                Already have an account? <a class="ml-2" href="{% url 'login' %}">Sign in</a>
-            </small>
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit"> Inregistrare</button>
         </div>
+    </form>
+    <div class="border-top pt-3">
+        <small class="text-muted"> 
+                Ai deja cont? <a class="ml-2" href="{% url 'login' %}">Autentificare</a>
+            </small>
     </div>
+</div>
 {% endblock content %}
