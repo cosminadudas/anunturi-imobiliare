@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 # Create your models here.
 # Model anunt
@@ -12,3 +13,6 @@ class Anunt(models.Model):
 
     def __str__(self):
         return self.titlu
+
+    def get_absolute_url(self):
+        return reverse('anunt-detail', kwargs={'pk': self.pk})

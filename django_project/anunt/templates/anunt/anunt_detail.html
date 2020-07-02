@@ -1,0 +1,18 @@
+{% extends "anunt/base.html" %} {% block content %}
+
+<article class="media content-section">
+    <img class="rounded-circle anunt-img" src="{{ object.autor.profile.image.url }}">
+    <div class="media-body">
+        <div class="anunt-metadata">
+            <a class="mr-2" href="#">{{ object.autor }}</a>
+            <small class="text-muted">{{ object.data_postarii }}</small> {% if object.autor == user %}
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'anunt-update' object.id %}"> Editeaza </a>
+            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'anunt-delete' object.id %}"> Sterge </a> {% endif %}
+        </div>
+        <h2 class="anunt-titlu">{{ object.titlu }}</a>
+        </h2>
+        <p class="anunt-descriere">{{ object.descriere }}</p>
+    </div>
+</article>
+
+{% endblock content %}
