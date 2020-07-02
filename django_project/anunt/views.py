@@ -9,3 +9,6 @@ def home(request):
 
 def about(request):
     return render(request, 'anunt/about.html', {'title': 'About'})
+
+
+

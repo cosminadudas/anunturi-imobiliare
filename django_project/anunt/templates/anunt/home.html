@@ -2,6 +2,7 @@
 {% block content %}
     {% for anunt in anunturi %}
         <article class="media content-section">
+            <img class="rounded-circle anunt-img" src="{{ anunt.autor.profile.image.url }}">
             <div class="media-body">
             <div class="anunt-metadata">
                 <a class="mr-2" href="#">{{ anunt.autor }}</a>
